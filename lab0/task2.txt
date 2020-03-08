@@ -1,1 +1,1 @@
-UTF-16(LE) (ñ BOM)
+UTF-16LE (ñ BOM)
