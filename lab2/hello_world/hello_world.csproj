@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EB25FF87-93B9-4F69-9907-CA34DF70C169}</ProjectGuid>
+    <ProjectGuid>{A6891F28-DECC-47ED-BAD4-EB4EC6EA97C0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>hello_world</RootNamespace>
     <AssemblyName>hello_world</AssemblyName>
@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="editorconfig" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
