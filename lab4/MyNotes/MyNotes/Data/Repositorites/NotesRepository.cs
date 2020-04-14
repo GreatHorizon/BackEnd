@@ -16,7 +16,7 @@ namespace MyNotes.Data.Repositorites
             notesFileName = path;
         }
 
-        public IEnumerable<Note> GetAll()
+        public List<Note> GetAll()
         {
             string line;
             List<Note> notesList = new List<Note>();

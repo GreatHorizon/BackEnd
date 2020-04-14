@@ -8,7 +8,7 @@ namespace MyNotes.Data.interfaces
 {
     public interface INotesRepository
     {
-        IEnumerable<Note> GetAll();
+        List<Note> GetAll();
         public void AddNote(string text);
 
     }
