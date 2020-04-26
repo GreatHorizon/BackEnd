@@ -23,9 +23,9 @@ namespace PasswordStrengthTest
         }
 
         [TestMethod]
-        public void ñyrillic_symbols_in_password_should_retur_false()
+        public void cyrillic_symbols_in_password_should_retur_false()
         {
-            string password = "éôûâ213";
+            string password = "Ð¹Ñ„Ñ‹Ð²213";
             bool res = Program.IsCorrectPassword(password);
             Assert.AreEqual(false, res);
         }
