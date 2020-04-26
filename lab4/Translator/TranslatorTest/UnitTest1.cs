@@ -1,4 +1,4 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+Ôªøusing Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TranslatorTest
 {
@@ -17,13 +17,13 @@ namespace TranslatorTest
         public void if_word_is_in_dictionary_should_return_translation()
         {
             string result = Translator.Models.Translator.GetTranslation("dog", path);
-            Assert.AreEqual(result, "ÒÓ·‡Í‡");
+            Assert.AreEqual(result, "—Å–æ–±–∞–∫–∞");
         }
 
         [TestMethod]
         public void if_russian_word_should_return_english_translation()
         {
-            string result = Translator.Models.Translator.GetTranslation("ÍÓÚ", path);
+            string result = Translator.Models.Translator.GetTranslation("–∫–æ—Ç", path);
             Assert.AreEqual(result, "cat");
         }
 
@@ -31,7 +31,7 @@ namespace TranslatorTest
         public void if_english_word_should_return_russian_translation()
         {
             string result = Translator.Models.Translator.GetTranslation("cat", path);
-            Assert.AreEqual("ÍÓÚ", result);
+            Assert.AreEqual("–∫–æ—Ç", result);
         }
     }
 }
