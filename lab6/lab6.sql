@@ -232,7 +232,7 @@ VALUES
 	('Carl Smith');
 
 INSERT INTO orders(users_id, status)
-VALUES 
+VALUES
 	(3, 0),
 	(3, 1),
 	(3, 1),
@@ -249,8 +249,8 @@ VALUES
 у которых ВСЕ записи в таблице orders имеют status = 0*/
 SELECT * FROM users
 WHERE users_id IN
-(	SELECT users_id FROM orders WHERE 
-	status = 0 AND users_id NOT IN 
+(	SELECT users_id FROM orders WHERE
+	users_id NOT IN
 	(
 		SELECT users_id FROM orders
 		WHERE status != 0
@@ -268,13 +268,12 @@ WHERE users_id IN
 	HAVING count(users_id) > 5
 );
 
-
 /*8. (#10)  В чем различие между выражениями HAVING и WHERE?*/
 
 /*WHERE выполняется до получения результата, 
 ограничивает не подходщие по условию во время запросы.
 Проверяемое условие может содержать 
-агрегатную функцию(min(), sum() и тд) только внутри подзапроса.
+агрегатную функцию только внутри подзапроса.
 
 HAVING же фильтрует результат операции, убирая неподходящие значения
 после получения результата.
