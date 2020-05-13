@@ -65,7 +65,7 @@ FROM
 	GROUP BY user_id 
 )
 GROUP BY download_count;
-	
+
 /*3. (#10) Опишите разницу типов данных DATETIME и TIMESTAMP*/
 /*DATATIME
 Хранит время в виде целого числа в формате YYYYMMDDHHMMSS, не зависит от временной зоны.
@@ -132,6 +132,7 @@ SELECT count(*) as quantity_of_courses FROM
 	HAVING count(*) > 5
 );
 
+
 /* 2. отобразить все курсы, на которые записан определенный студент.*/
 SELECT course.name FROM student
 LEFT OUTER JOIN student_on_course
@@ -139,7 +140,6 @@ ON student.student_id = student_on_course.student_id
 LEFT OUTER JOIN course
 ON course.course_id = student_on_course.course_id
 WHERE student.name = 'Carl Smith';
-
 
 /*5. (5#) Может ли значение в столбце(ах), на который наложено 
 ограничение foreign key, равняться null? Привидите пример. */
@@ -272,10 +272,11 @@ WHERE users_id IN
 
 /*WHERE выполняется до получения результата, 
 ограничивает не подходщие по условию во время запросы.
-Проверяемое условие может содержать 
-агрегатную функцию только внутри подзапроса.
+Не может использоваться с агрeгатными функциями.
+Используется вместе с SELECT, UPDATE, DELETE.
 
 HAVING же фильтрует результат операции, убирая неподходящие значения
 после получения результата.
-Можно использовать с агрегатными функциями напрямую.*/
+Можно использовать с агрегатными функциями.
+Используется только с SELECT + GROUP BY*/
 
