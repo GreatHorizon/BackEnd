@@ -38,9 +38,9 @@ namespace MyNotesTest
         public void adding_note_in_russian_should_return_list_of_note_in_russian()
         {
             File.WriteAllText(GetAllTest.notesFilePath, string.Empty);
-            notesRepository.AddNote("ñîáàêè è êîøêè");
+            notesRepository.AddNote("ÑÐ¾Ð±Ð°ÐºÐ¸ Ð¸ ÐºÐ¾ÑˆÐºÐ¸");
 
-            string[] requiredList = {"ñîáàêè è êîøêè"};
+            string[] requiredList = {"ÑÐ¾Ð±Ð°ÐºÐ¸ Ð¸ ÐºÐ¾ÑˆÐºÐ¸"};
             string[] originalList = notesRepository.GetAll().Select(note => note.Data).ToArray();
             CollectionAssert.AreEqual(originalList, requiredList);
         }
