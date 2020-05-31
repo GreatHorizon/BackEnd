@@ -267,19 +267,7 @@ WHERE users_id IN
 	GROUP BY users_id
 	HAVING count(users_id) > 5
 );
-SELECT users.users_id, users.name, orders.status
-FROM users
-INNER JOIN orders ON users.users_id = orders.users_id
-WHERE orders.status = 1
-GROUP BY users.users_id
-HAVING COUNT(orders.status) > 5;
 
-SELECT users.users_id, name, COUNT(*) AS number_of_orders
-FROM users
-INNER JOIN orders ON users.users_id = orders.users_id
-WHERE status = 1
-GROUP BY orders.users_id
-HAVING number_of_orders > 5;
 /*8. (#10)  В чем различие между выражениями HAVING и WHERE?*/
 
 /*WHERE выполняется до получения результата, 
